@@ -1,116 +1,215 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>F2E Week3 Admin Order</title>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>F2E Week3 Admin Order</title>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #f2f2f2;
+            }
+            
+            header {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 70px;
+                background-color: #000000;
+                color: #ffffff
+            }
+            
+            .title {
+                font-size: 24px;
+                font-family: "Helvetica Neue Bold";
+            }
+            
+            .subtitle {
+                font-size: 20px;
+                font-family: "Helvetica Bold"
+            }
+            
+            .subtitle2 {
+                font-size: 16px;
+                font-family: "Helvetica Bold";
+            }
+            
+            .revenue {
+                font-family: HelveticaNeue-Bold;
+                font-size: 36px;
+                color: #7ED321;
+            }
+            
+            .cost {
+                font-family: HelveticaNeue-Bold;
+                font-size: 36px;
+                color: #D0021B;
+            }
+            
+            .income {
+                font-family: HelveticaNeue-Bold;
+                font-size: 36px;
+                color: #4A90E2;
+            }
+            
+            .user,
+            .logo {
+                margin: auto 42px auto;
+            }
+            
+            nav>ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+            }
+            
+            li a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                margin: 0 10px 0;
+                color: #9b9b9b;
+                height: 100%;
+                padding: 26px 0 25px 0;
+            }
+            
+            .right {
+                float: right;
+                margin-left: auto;
+                margin-right: 8%;
+            }
+            
+            .datadashboard {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px 0 10px 0;
+            }
+            
+            .datadashboard-item {
+                display: flex;
+                width: 300px;
+                height: 138px;
+                background-color: #ffffff;
+                text-align: center;
+                padding: -50px;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .filter {
+                margin: 20px 0px 10px;
+                width: 100%;
+            }
+            
+            .filter-options {
+                margin-left: auto;
+            }
+            
+            .nav-active {
+                border-bottom: 5px solid #ffffff;
+            }
+            
+            .container {
+                margin: 0 auto 0 auto;
+                width: 80%;
+            }
+            
+            .container>div {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .chartdashboard {
+                background-color: #ffffff;
+                width: 100%;
+                height: 400px;
+                margin: 10px 0 10px 0;
+            }
+            
+            .newestInfo {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+            }
+            
+            .newestInfo>div {
+                background-color: #ffffff;
+                width: 40%;
+                height: 450px;
+                margin: 10px 0 10px 0;
+            }
+        </style>
+    </head>
 
-    <style>
-        body{
-            background-color: #f2f2f2;
-        }
-        header {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 70px;
-            background-color: #000000;
-            color: #ffffff
-        }
+    <body>
+        <header>
+            <div class="title logo">Shoptime</div>
+            <nav>
+                <ul class="subtitle2">
+                    <li class="nav-active">
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">ORDERS</a>
+                    </li>
+                    <li>
+                        <a href="#">PRODUCT</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="right user">ADMIN</div>
+        </header>
+        <div class="container">
+            <div class="filter">
+                <div class="title">
+                    Overview
+                </div>
+                <div class="filter-options">
 
-        .title{
-            font-size: 24px ;
-            font-family: "Helvetica Neue Bold";
-        }
-
-        .subtitle{
-            font-size: 20px;
-            font-family: "Helvetica Bold"
-        }
-
-        .subtitle2{
-            font-size: 16px;
-            font-family: "Helvetica Bold";
-        }
-
-        .user,
-        .logo{
-            margin: auto 42px auto;
-        }
-
-        nav{
-            margin:  26px 0 25px 0;
-        }
-
-        nav>ul {
-            list-style-type: none;
-            display: flex;
-            flex-direction: row;
-        }
-
-
-        li a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            margin: 0 10px 0;
-            color: #9b9b9b;
-        }
-
-        .right {
-            float: right;
-            margin-left: auto;
-            margin-right: 8%;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <div class="title logo">Shoptime</div>
-        <nav>
-            <ul class="subtitle2">
-                <li>
-                    <a href="#">HOME</a>
-                </li>
-                <li>
-                    <a href="#">ORDERS</a>
-                </li>
-                <li>
-                    <a href="#">PRODUCT</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="right user">ADMIN</div>
-    </header>
-    <div>
-        <section>
-            <div class="title">
-                Overview
-            </div>  
-            <input type="date">
-            <input type="date">
-            <Select>
-                <option value="0">Daily</option>
-                <option value="1">Weekly</option>
-                <option value="2">Monthly</option>
-                <option value="3">Yearly</option>
-            </Select>
-
-            <div class="data">
-                <div>TOTAL REVENUE</div>
-                <div>TOTAL COST</div>
-                <div>NET INCOME</div>
+                    <input type="date">
+                    <input type="date">
+                    <Select>
+                        <option value="0">Daily</option>
+                        <option value="1">Weekly</option>
+                        <option value="2">Monthly</option>
+                        <option value="3">Yearly</option>
+                    </Select>
+                </div>
             </div>
-            <div class="chart"></div>
-            <div class="transactionWeb"></div>
-            <div class="latestOrders"></div>
-        </section>
-    </div>
-</body>
+
+            <div class="datadashboard subtitle2">
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE
+                        <div class="revenue">54,540</div>
+                    </div>
+                </div>
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-boxes"></i>TOTAL COST
+                        <div class="cost">12,660</div>
+                    </div>
+                </div>
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-money-bill"></i>NET INCOME
+                        <div class="income">41,880</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chartdashboard"></div>
+            <div class="newestInfo">
+
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </body>
 
 </html>
