@@ -1,343 +1,342 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>F2E Week3 Admin Order</title>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-        crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f2f2f2;
-        }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>F2E Week3 Admin Order</title>
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <style>
+            body {
+                background-color: #f2f2f2;
+            }
+            
+            header {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 70px;
+                background-color: #000000;
+                color: #ffffff
+            }
+            
+            .title {
+                font-size: 24px;
+                font-family: "Helvetica Neue Bold";
+            }
+            
+            .subtitle {
+                font-size: 20px;
+                font-family: "Helvetica Bold"
+            }
+            
+            .subtitle2 {
+                font-size: 16px;
+                font-family: "Helvetica Bold";
+            }
+            
+            .content-gray {
+                font-size: 16px;
+                font-family: "HelveticaNeue-Medium";
+                color: #9b9b9b;
+            }
+            
+            .revenue {
+                font-family: "HelveticaNeue-Bold";
+                font-size: 36px;
+                color: #7ED321;
+            }
+            
+            .cost {
+                font-family: "HelveticaNeue-Bold";
+                font-size: 36px;
+                color: #D0021B;
+            }
+            
+            .income {
+                font-family: "HelveticaNeue-Bold";
+                font-size: 36px;
+                color: #4A90E2;
+            }
+            
+            .transaction-up {
+                color: #7ED321;
+                font-size: 16px;
+                font-family: 'HelveticaNeue-Medium';
+            }
+            
+            .transaction-down {
+                color: #D0021B
+            }
+            
+            .transaction-number {
+                font-family: 'HelveticaNeue-Medium';
+                font-size: 20px;
+                color: #000000;
+                text-align: right;
+            }
+            
+            .user,
+            .logo {
+                margin: auto 42px auto;
+            }
+            
+            nav>ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+            }
+            
+            li a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                margin: 0 10px 0;
+                color: #9b9b9b;
+                height: 100%;
+                padding: 26px 0 25px 0;
+            }
+            
+            .right {
+                float: right;
+                margin-left: auto;
+                margin-right: 8%;
+            }
+            
+            .datadashboard {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 10px 0 10px 0;
+            }
+            
+            .datadashboard-item {
+                display: flex;
+                width: 30%;
+                height: 138px;
+                background-color: #ffffff;
+                text-align: center;
+                padding: -50px;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .filter {
+                margin: 20px 0px 10px;
+                width: 100%;
+            }
+            
+            .filter-options {
+                margin-left: auto;
+            }
+            
+            .nav-active {
+                border-bottom: 5px solid #ffffff;
+            }
+            
+            .container {
+                margin: 0 auto 0 auto;
+                width: 80%;
+            }
+            
+            .container>div {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .chartdashboard {
+                background-color: #ffffff;
+                width: 100%;
+                height: 400px;
+                margin: 10px 0 10px 0;
+            }
+            
+            .newestInfo-dashboard {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+            }
+            
+            .newestInfo-item {
+                background-color: #ffffff;
+                width: 40%;
+                height: 450px;
+                margin: 10px 0 10px 0;
+                padding: 0px 40px 0 40px;
+            }
+            
+            .newestInfo-item ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                /* justify-content: space-between; */
+                height: 80%;
+                /* align-items: stretch; */
+            }
+            
+            .newestInfo-item>h4 {
+                height: auto;
+                margin: 30px 0 30px 0;
+            }
+            
+            .newestInfo-item ul li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 4px solid #f2f2f2;
+                height: 85%;
+                flex-wrap: nowrap;
+            }
+            
+            .newestInfo-item ul li:last-child {
+                border-bottom: 0px solid #f2f2f2;
+            }
+            
+            .newestInfo-item ul li div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .icon-l i {
+                font-size: 45px;
+            }
+            
+            .icon-m i {
+                height: 18px;
+                height: 18px;
+            }
+        </style>
+    </head>
 
-        header {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 70px;
-            background-color: #000000;
-            color: #ffffff
-        }
+    <body>
+        <header>
+            <div class="title logo">Shoptime</div>
+            <nav>
+                <ul class="subtitle2">
+                    <li class="nav-active">
+                        <a href="#">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#">ORDERS</a>
+                    </li>
+                    <li>
+                        <a href="#">PRODUCT</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="right user">ADMIN</div>
+        </header>
+        <div class="container">
+            <div class="filter">
+                <div class="title">
+                    Overview
+                </div>
+                <div class="filter-options">
 
-        .title {
-            font-size: 24px;
-            font-family: "Helvetica Neue Bold";
-        }
-
-        .subtitle {
-            font-size: 20px;
-            font-family: "Helvetica Bold"
-        }
-
-        .subtitle2 {
-            font-size: 16px;
-            font-family: "Helvetica Bold";
-        }
-
-        .content-gray {
-            font-size: 16px;
-            font-family: "HelveticaNeue-Medium";
-            color: #9b9b9b;
-        }
-
-        .revenue {
-            font-family: "HelveticaNeue-Bold";
-            font-size: 36px;
-            color: #7ED321;
-        }
-
-        .cost {
-            font-family: "HelveticaNeue-Bold";
-            font-size: 36px;
-            color: #D0021B;
-        }
-
-        .income {
-            font-family: "HelveticaNeue-Bold";
-            font-size: 36px;
-            color: #4A90E2;
-        }
-
-        .transaction-up {
-            color: #7ED321;
-            font-size: 16px;
-            font-family: 'HelveticaNeue-Medium';
-        }
-
-        .transaction-down {
-            color: #D0021B
-        }
-
-        .transaction-number {
-            font-family: 'HelveticaNeue-Medium';
-            font-size: 20px;
-            color: #000000;
-            text-align: right;
-        }
-
-        .user,
-        .logo {
-            margin: auto 42px auto;
-        }
-
-        nav>ul {
-            list-style-type: none;
-            display: flex;
-            flex-direction: row;
-            height: 100%;
-        }
-
-        li a {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            margin: 0 10px 0;
-            color: #9b9b9b;
-            height: 100%;
-            padding: 26px 0 25px 0;
-        }
-
-        .right {
-            float: right;
-            margin-left: auto;
-            margin-right: 8%;
-        }
-
-        .datadashboard {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 10px 0 10px 0;
-        }
-
-        .datadashboard-item {
-            display: flex;
-            width: 30%;
-            height: 138px;
-            background-color: #ffffff;
-            text-align: center;
-            padding: -50px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .filter {
-            margin: 20px 0px 10px;
-            width: 100%;
-        }
-
-        .filter-options {
-            margin-left: auto;
-        }
-
-        .nav-active {
-            border-bottom: 5px solid #ffffff;
-        }
-
-        .container {
-            margin: 0 auto 0 auto;
-            width: 80%;
-        }
-
-        .container>div {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .chartdashboard {
-            background-color: #ffffff;
-            width: 100%;
-            height: 400px;
-            margin: 10px 0 10px 0;
-        }
-
-        .newestInfo-dashboard {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-        }
-
-        .newestInfo-item {
-            background-color: #ffffff;
-            width: 40%;
-            height: 450px;
-            margin: 10px 0 10px 0;
-            padding: 0px 40px 0 40px;
-        }
-
-        .newestInfo-item ul {
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-            /* justify-content: space-between; */
-            height: 80%;
-            /* align-items: stretch; */
-        }
-
-        .newestInfo-item>h4 {
-            height: auto;
-            margin: 30px 0 30px 0;
-        }
-
-        .newestInfo-item ul li {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid #f2f2f2;
-            height: 85%;
-            flex-wrap: nowrap;
-        }
-
-
-
-        .newestInfo-item ul li:last-child {
-            border-bottom: 0px solid #f2f2f2;
-        }
-
-        .newestInfo-item ul li div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-
-
-        .icon-l i {
-            font-size: 45px;
-        }
-
-
-        .icon-m i {
-            height: 18px;
-            height: 18px;
-
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <div class="title logo">Shoptime</div>
-        <nav>
-            <ul class="subtitle2">
-                <li class="nav-active">
-                    <a href="#">HOME</a>
-                </li>
-                <li>
-                    <a href="#">ORDERS</a>
-                </li>
-                <li>
-                    <a href="#">PRODUCT</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="right user">ADMIN</div>
-    </header>
-    <div class="container">
-        <div class="filter">
-            <div class="title">
-                Overview
-            </div>
-            <div class="filter-options">
-
-                <input type="date">
-                <input type="date">
-                <Select>
+                    <input type="date">
+                    <input type="date">
+                    <Select>
                     <option value="0">Daily</option>
                     <option value="1">Weekly</option>
                     <option value="2">Monthly</option>
                     <option value="3">Yearly</option>
                 </Select>
-            </div>
-        </div>
-
-        <div class="datadashboard subtitle2">
-            <div class="datadashboard-item">
-                <div>
-                    <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE
-                    <div class="revenue">54,540</div>
                 </div>
             </div>
-            <div class="datadashboard-item">
-                <div>
-                    <i class="fas fa-boxes"></i>TOTAL COST
-                    <div class="cost">12,660</div>
+
+            <div class="datadashboard subtitle2">
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE
+                        <div class="revenue">54,540</div>
+                    </div>
+                </div>
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-boxes"></i>TOTAL COST
+                        <div class="cost">12,660</div>
+                    </div>
+                </div>
+                <div class="datadashboard-item">
+                    <div>
+                        <i class="fas fa-money-bill"></i>NET INCOME
+                        <div class="income">41,880</div>
+                    </div>
                 </div>
             </div>
-            <div class="datadashboard-item">
-                <div>
-                    <i class="fas fa-money-bill"></i>NET INCOME
-                    <div class="income">41,880</div>
-                </div>
+            <div class="chartdashboard">
+                <h4 class="title">Activity</h4>
             </div>
-        </div>
-        <div class="chartdashboard">
-            <h4 class="title">Activity</h4>
-        </div>
-        <div class="newestInfo-dashboard">
+            <div class="newestInfo-dashboard">
 
-            <div class="newestInfo-item">
-                <h4 class="title">
-                    Transaction Website
-                </h4>
-                <ul>
-                    <li>
-                        <div class="icon-l">
-                            <i class="fab fa-facebook-square"></i> &ensp;
-                            <span class="content-gray">Fackbook.com</span>
-                        </div>
-                        <div>
-                            <span class="transaction-number">45,836</span> &ensp;
-                            <span class="transaction-up">
-                                <i class="fas fa-long-arrow-alt-up"></i>20%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <i class="fab fa-google"></i> &nbsp;google.com
-                        </div>
-                        <div>
-                            <span>23,582</span> &ensp;
-                            <span>
-                                <i class="fas fa-long-arrow-alt-up"></i>12%</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <i class="fab fa-wordpress"></i> &nbsp;Wordpress.com
-                        </div>
-                        <div>
-                            <span>1,057</span> &ensp;
-                            <span>
-                                <i class="fas fa-long-arrow-alt-down"></i>30%</span>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="newestInfo-item">
-                <h4 class="title">Latest Orders</h4>
-                <ul>
-                    <li>
-                        <div><img src="" alt="">
-                            <div style="display: flex; flex-direction: column">
-                                <div>Vintage T-Shirt</div>
-                                <div>2018/6/13 13:42</div>
-                                <div>Belle Willis</div>
+                <div class="newestInfo-item">
+                    <h4 class="title">
+                        Transaction Website
+                    </h4>
+                    <ul>
+                        <li>
+                            <div class="icon-l">
+                                <i class="fab fa-facebook-square"></i> &ensp;
+                                <span class="content-gray">Fackbook.com</span>
                             </div>
-                        
-                        </div>
-                    </li>
-                </ul>
+                            <div>
+                                <span class="transaction-number">45,836</span> &ensp;
+                                <span class="transaction-up">
+                                <i class="fas fa-long-arrow-alt-up"></i>20%</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-l">
+                                <i class="fab fa-google"></i> &ensp;
+                                <span class="content-gray">
+                                google.com
+                                </span>
+                            </div>
+                            <div>
+                                <span class="transaction-number">23,582</span> &ensp;
+                                <span class="transaction-up">
+                                <i class="fas fa-long-arrow-alt-up"></i>12%</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-l">
+                                <i class="fab fa-wordpress"></i> &nbsp;
+                                <span class="content-gray">
+                                Wordpress.com
+                                </span>
+                            </div>
+                            <div>
+                                <span class="transaction-number">1,057</span> &ensp;
+                                <span class="transaction-down">
+                                <i class="fas fa-long-arrow-alt-down"></i>30%</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="newestInfo-item">
+                    <h4 class="title">Latest Orders</h4>
+                    <ul>
+                        <li>
+                            <div><img src="" alt="">
+                                <div style="display: flex; flex-direction: column">
+                                    <div>Vintage T-Shirt</div>
+                                    <div>2018/6/13 13:42</div>
+                                    <div>Belle Willis</div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 
 </html>
