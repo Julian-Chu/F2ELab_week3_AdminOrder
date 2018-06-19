@@ -197,7 +197,7 @@
                 border-bottom: 0px solid #f2f2f2;
             }
             
-            .newestInfo-item ul li div {
+            .newestInfo-item ul li>div {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -208,8 +208,24 @@
             }
             
             .icon-m i {
-                height: 18px;
-                height: 18px;
+                font-size: 18px;
+            }
+            
+            .latest-order img {
+                height: 100px;
+                width: 100px;
+            }
+            
+            .latest-order {
+                width: 100%
+            }
+            
+            .latest-order-content {
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                width: 100%;
+                flex-wrap: wrap;
             }
         </style>
     </head>
@@ -324,11 +340,31 @@
                     <h4 class="title">Latest Orders</h4>
                     <ul>
                         <li>
-                            <div><img src="" alt="">
-                                <div style="display: flex; flex-direction: column">
+                            <div class="latest-order">
+                                <div class="latest-order-content">
+                                    <img src="./1.jpg" alt="">
                                     <div>Vintage T-Shirt</div>
-                                    <div>2018/6/13 13:42</div>
-                                    <div>Belle Willis</div>
+                                    <div><i class="fas fa-clock"></i>2018/6/13 13:42</div>
+                                    <div><i class="fas fa-male"></i>Belle Willis</div>
+                                </div>
+                                <div>
+                                    <div>Total</div>
+                                    <div>3,200</div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="latest-order">
+                                <div class="latest-order-content">
+                                    <img src="./4.jpg" alt="">
+                                    <div>Cowboy jacket</div>
+                                    <div><i class="fas fa-clock"></i>2018/6/13 10:45</div>
+                                    <div><i class="fas fa-male"></i>Adrian Cummings</div>
+                                </div>
+                                <div>
+                                    <div>Total</div>
+                                    <div>3,200</div>
                                 </div>
 
                             </div>
