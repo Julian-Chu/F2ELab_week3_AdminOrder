@@ -297,7 +297,7 @@ th {
 }
 
 td {
-  /* white-space: pre; */
+  padding: 8px 0;
 }
 
 thead>tr {
@@ -392,4 +392,70 @@ span.select::after {
   content: "\f0d7";
   display: inline-block;
   font-weight: 900;
+}
+
+td img {
+  width: 40px;
+  height: 40px;
+}
+
+.td-product,
+.td-product i {
+  height: 40px;
+  line-height: 40px;
+}
+
+#box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#box .content {
+  position: absolute;
+  top: 95px;
+  left: calc( (100% - 940px)/2);
+  width: 940px;
+  height: 700px;
+  background: #ffffff;
+  z-index: 2;
+}
+
+#box .content * {
+  display: inline-block;
+}
+
+#box .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.newproduct-header {
+  width: 100%;
+  height: 64px;
+  background-color: #000000;
+}
+
+.newproduct-left {
+  float: left;
+  width: 50%;
+  height: calc(100% - 70px);
+  background-color: #7ED321;
+  display: inline-block;
+}
+
+.newproduct-right {
+  float: left;
+  width: 50%;
+  height: calc(100% - 70px);
+  background-color: #F5A623;
+  display: inline-block;
 }
