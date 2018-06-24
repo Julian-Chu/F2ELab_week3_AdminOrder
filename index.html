@@ -1,180 +1,191 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>F2E Week3 Admin Order</title>
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load('current', {
-                'packages': ['corechart']
-            });
-            google.charts.setOnLoadCallback(drawChart);
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>F2E Week3 Admin Order</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Year', 'Sales', 'Expenses'],
-                    ['2004', 1000, 400],
-                    ['2005', 1170, 460],
-                    ['2006', 660, 1120],
-                    ['2007', 1030, 540]
-                ]);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004', 1000, 400],
+                ['2005', 1170, 460],
+                ['2006', 660, 1120],
+                ['2007', 1030, 540]
+            ]);
 
-                var options = {
-                    title: 'Activity',
-                    curveType: 'function',
-                    legend: {
-                        position: 'bottom'
-                    }
-                };
+            var options = {
+                title: 'Activity',
+                curveType: 'function',
+                legend: {
+                    position: 'bottom'
+                }
+            };
 
-                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-                chart.draw(data, options);
-            }
-        </script>
+            chart.draw(data, options);
+        }
 
-    </head>
+    </script>
 
-    <body>
-        <header>
-            <div class="title logo">Shoptime</div>
-            <nav class="menu">
-                <a href="#" class="active">HOME</a>
-                <a href="#">ORDERS</a>
-                <a href="#">PRODUCT</a>
-            </nav>
-            <div class="right user">ADMIN</div>
-        </header>
-        <div class="container">
-            <div class="filter">
-                <div class="title">
-                    Overview
-                </div>
-                <div class="filter-options">
-                    <span>2018/6/6</span>
-                    <i class="fas fa-caret-right"></i>
-                    <span>2018/6/13</span>
+</head>
 
-                    <Select>
+<body>
+    <header>
+        <div class="title logo">Shoptime</div>
+        <nav class="menu">
+            <a href="./index.html" class="active">HOME</a>
+            <a href="#">ORDERS</a>
+            <a href="./product.html">PRODUCT</a>
+        </nav>
+        <div class="right user">ADMIN</div>
+    </header>
+    <div class="container">
+        <div class="filter">
+            <div class="title">
+                Overview
+            </div>
+            <div class="filter-options">
+                <span>2018/6/6</span>
+                <i class="fas fa-caret-right"></i>
+                <span>2018/6/13</span>
+
+                <Select>
                     <option value="0">Daily</option>
                     <option value="1">Weekly</option>
                     <option value="2">Monthly</option>
                     <option value="3">Yearly</option>
                 </Select>
-                </div>
             </div>
+        </div>
 
-            <div class="datadashboard subtitle2">
-                <div class="datadashboard-item">
-                    <div>
-                        <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE
-                        <div class="revenue">54,540</div>
-                    </div>
-                </div>
-                <div class="datadashboard-item">
-                    <div>
-                        <i class="fas fa-boxes"></i>TOTAL COST
-                        <div class="cost">12,660</div>
-                    </div>
-                </div>
-                <div class="datadashboard-item">
-                    <div>
-                        <i class="fas fa-money-bill"></i>NET INCOME
-                        <div class="income">41,880</div>
-                    </div>
+        <div class="datadashboard subtitle2">
+            <div class="datadashboard-item">
+                <div>
+                    <i class="fas fa-hand-holding-usd"></i>TOTAL REVENUE
+                    <div class="revenue">54,540</div>
                 </div>
             </div>
-            <div class="chartdashboard">
-                <div style="height: 100%;" id="curve_chart"></div>
+            <div class="datadashboard-item">
+                <div>
+                    <i class="fas fa-boxes"></i>TOTAL COST
+                    <div class="cost">12,660</div>
+                </div>
             </div>
-            <div class="newestInfo-dashboard">
+            <div class="datadashboard-item">
+                <div>
+                    <i class="fas fa-money-bill"></i>NET INCOME
+                    <div class="income">41,880</div>
+                </div>
+            </div>
+        </div>
+        <div class="chartdashboard">
+            <div style="height: 100%;" id="curve_chart"></div>
+        </div>
+        <div class="newestInfo-dashboard">
 
-                <div class="newestInfo-item">
-                    <h4 class="title">
-                        Transaction Website
-                    </h4>
-                    <ul>
-                        <li>
-                            <div class="icon-l">
-                                <i class="fab fa-facebook-square"></i> &ensp;
-                                <span class="content-gray">Fackbook.com</span>
-                            </div>
-                            <div>
-                                <span class="transaction-number">45,836</span> &ensp;
-                                <span class="transaction-up">
+            <div class="newestInfo-item">
+                <h4 class="title">
+                    Transaction Website
+                </h4>
+                <ul>
+                    <li>
+                        <div class="icon-l">
+                            <i class="fab fa-facebook-square"></i> &ensp;
+                            <span class="content-gray">Fackbook.com</span>
+                        </div>
+                        <div>
+                            <span class="transaction-number">45,836</span> &ensp;
+                            <span class="transaction-up">
                                 <i class="fas fa-long-arrow-alt-up"></i>20%</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon-l">
-                                <i class="fab fa-google"></i> &ensp;
-                                <span class="content-gray">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-l">
+                            <i class="fab fa-google"></i> &ensp;
+                            <span class="content-gray">
                                 google.com
-                                </span>
-                            </div>
-                            <div>
-                                <span class="transaction-number">23,582</span> &ensp;
-                                <span class="transaction-up">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="transaction-number">23,582</span> &ensp;
+                            <span class="transaction-up">
                                 <i class="fas fa-long-arrow-alt-up"></i>12%</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon-l">
-                                <i class="fab fa-wordpress"></i> &nbsp;
-                                <span class="content-gray">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-l">
+                            <i class="fab fa-wordpress"></i> &nbsp;
+                            <span class="content-gray">
                                 Wordpress.com
-                                </span>
-                            </div>
-                            <div>
-                                <span class="transaction-number">1,057</span> &ensp;
-                                <span class="transaction-down">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="transaction-number">1,057</span> &ensp;
+                            <span class="transaction-down">
                                 <i class="fas fa-long-arrow-alt-down"></i>30%</span>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="newestInfo-item">
+                <h4 class="title">Latest Orders</h4>
+                <div class="latest-order-item">
+                    <div class="latest-order-item-image">
+                        <img src="./1.jpg" alt="">
+                    </div>
+                    <div class="latest-order-item-detail">
+                        <b>Vintage T-Shirt</b>
+                        <time>
+                            <i class="fas fa-clock"></i>2018/6/13 13:42</time>
+                        <span>
+                            <i class="fas fa-male"></i>Belle Willis</span>
+                    </div>
+                    <div class="latest-order-item-total">
+                        <div>Total
+                            <br/>
+                            <b>3,200</b>
+                        </div>
+                    </div>
 
                 </div>
-                <div class="newestInfo-item">
-                    <h4 class="title">Latest Orders</h4>
-                    <div class="latest-order-item">
-                        <div class="latest-order-item-image">
-                            <img src="./1.jpg" alt="">
-                        </div>
-                        <div class="latest-order-item-detail">
-                            <b>Vintage T-Shirt</b>
-                            <time><i class="fas fa-clock"></i>2018/6/13 13:42</time>
-                            <span><i class="fas fa-male"></i>Belle Willis</span>
-                        </div>
-                        <div class="latest-order-item-total">
-                            <div>Total <br/><b>3,200</b></div>
-                        </div>
-
+                <div class="latest-order-item">
+                    <div class="latest-order-item-image">
+                        <img src="./4.jpg" alt="">
                     </div>
-                    <div class="latest-order-item">
-                        <div class="latest-order-item-image">
-                            <img src="./4.jpg" alt="">
-                        </div>
-                        <div class="latest-order-item-detail">
+                    <div class="latest-order-item-detail">
 
-                            <b>Cowboy jacket</b>
-                            <time><i class="fas fa-clock"></i>2018/6/13 10:45</time>
-                            <span><i class="fas fa-male"></i>Adrian Cummings</span>
-                        </div>
-                        <div class="latest-order-item-total">
-                            <div>Total <br/><b>2,800</b></div>
-                        </div>
-
+                        <b>Cowboy jacket</b>
+                        <time>
+                            <i class="fas fa-clock"></i>2018/6/13 10:45</time>
+                        <span>
+                            <i class="fas fa-male"></i>Adrian Cummings</span>
                     </div>
-                    </dv>
-                    </dv>
-                    </dv>
-    </body>
+                    <div class="latest-order-item-total">
+                        <div>Total
+                            <br/>
+                            <b>2,800</b>
+                        </div>
+                    </div>
+
+                </div>
+                </dv>
+                </dv>
+                </dv>
+</body>
 
 </html>

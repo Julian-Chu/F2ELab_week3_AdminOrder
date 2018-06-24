@@ -2,6 +2,10 @@ body {
   background-color: #f2f2f2;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -18,12 +22,14 @@ header {
 
 .subtitle {
   font-size: 20px;
-  font-family: "Helvetica Bold"
+  font-family: "Helvetica Bold";
 }
 
 .subtitle2 {
   font-size: 16px;
   font-family: "Helvetica Bold";
+  line-height: 25px;
+  height: 25px;
 }
 
 .content-gray {
@@ -456,7 +462,6 @@ td img {
   float: left;
   width: calc(50% - 60px);
   height: calc(100% - 70px - 60px);
-  background-color: #F5A623;
   margin: 30px 30px 30px 0;
 }
 
@@ -481,12 +486,6 @@ td img {
   text-align: justify;
 }
 
-/* .newproduct-images:before {
-  content: '';
-  display: block;
-  height: 5px;
-} */
-
 .newproduct-images:after {
   content: '';
   display: inline-block;
@@ -496,5 +495,43 @@ td img {
 .newproduct-images img {
   width: 126px;
   height: 126px;
+  margin-top: 5px;
+}
+
+#box .newproduct-right>* {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#box .new-product-field {
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+#box .new-product-field:before {
+  content: attr(title);
+  background-color: #ebebeb;
+  width: 50%;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+}
+
+#box .new-product-field input {
+  width: 50%;
+  border: none;
+  display: inline-block;
+  float: left;
+  text-align: right;
+  height: 35px;
+  line-height: 35px;
+}
+
+.newproduct-right>input,
+.newproduct-right>textarea {
+  border-radius: 4px;
   margin-top: 5px;
 }
