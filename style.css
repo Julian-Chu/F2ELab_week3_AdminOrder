@@ -446,10 +446,11 @@ td img {
 
 .newproduct-left {
   float: left;
-  width: 50%;
+  width: calc(50% - 10px);
   height: calc(100% - 70px);
   background-color: #7ED321;
   display: inline-block;
+  margin: 5px;
 }
 
 .newproduct-right {
@@ -457,5 +458,15 @@ td img {
   width: 50%;
   height: calc(100% - 70px);
   background-color: #F5A623;
-  display: inline-block;
+}
+
+.drag {
+  background-color: #ebebeb;
+  width: 100%;
+  height: 115px;
+}
+
+.newproduct-images img {
+  width: 126px;
+  height: 126px;
 }
